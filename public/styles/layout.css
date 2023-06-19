@@ -18,8 +18,27 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+body {
+  font-family: Source Sans Pro, sans-serif;
+ }
+
+.navigation {
+  font-family: Bungee, san-serif;
+  color: white;
+  display: flex;
+  justify-content: stretch;
+  background-color: #3e55a2;
+}
+
+
+
+
+
+
