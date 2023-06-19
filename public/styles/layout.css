@@ -29,14 +29,17 @@ body {
   font-family: Source Sans Pro, sans-serif;
  }
 
-.navigation {
-  font-family: Bungee, san-serif;
+nav {
+  background-color: #3e55a2;
   color: white;
   display: flex;
-  justify-content: stretch;
-  background-color: #3e55a2;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
+#logo {
+  font-family: 'Bungee', sans-serif;
+}
 
 
 
