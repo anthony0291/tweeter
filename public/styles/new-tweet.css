@@ -1,0 +1,22 @@
+
+
+form {
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+  padding: 20px;
+  width: 90%;
+}
+
+.button {
+  background-color: #4056a1;
+  color: #FFFFFF;
+  font-family: "Bungee", sans-serif;
+  
+}
+
+.tweetBar {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: space-between; */
+}
