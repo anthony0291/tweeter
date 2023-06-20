@@ -1,8 +1,37 @@
 nav {
-  height: 120px;
-  width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  align-items: flex-end;
+  height: 120px;
+  width: 100%;
+  position: fixed;
+}
+
+nav .left .logo {
+  font-family: 'Bungee', sans-serif;
+  font-size: xx-large;
+  display: flex;
+  align-items: flex-start;
+}
+
+nav .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+/* nav {
+  height: 120px;
+  width: 100%;
   padding: 0 1.5em;
   display: flex;
   align-items: center;
@@ -10,12 +39,6 @@ nav {
   flex-direction: row;
   position: fixed;
 }
-
-#logo {
-  font-family: 'Bungee', sans-serif;
-  font-size: xx-large;
-}
-
 .clickHere {
   display: flex;
   flex-direction: column;
@@ -24,4 +47,4 @@ nav {
 
 .writeTweet {
   padding: 0.5em;
-}
+} */
