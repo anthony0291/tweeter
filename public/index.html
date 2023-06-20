@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/article-tweet.css" type="text/css" />
+    
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -72,21 +74,44 @@
     
 
 <main class="container">     
-  
-  
   <section class="new-tweet">
     <h4>What are you humming about?</h3>
     <form method="POST" action="/tweets/" class="form">
       <textarea name="text" placeholder="start typing."></textarea>
-    <div class="tweet-counter"> 
-      <button class="button" type="submit">Tweet</button>
-      <span class="counter">140</span>
-    </div> 
-  </section>
-    
+      <div class="tweet-counter"> 
+        <button class="button" type="submit">Tweet</button>
+        <span class="counter">140</span>
+      </div> 
     </form>
+  </section>
+</main>
   
 
-</main>
+<article class="mainTweet">
+      <header>
+      <div class="tweet-top">
+      <div>avatar Rhoda Jacobs</div>
+      <div class="tweet-ref">@Mrs.Jacobs</div>
+      </div>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet, leo vitae congue ullamcorper, lacus lacus rhoncus magna, at cursus sapien ante vel tellus. Phasellus lobortis felis sit amet lacus fringilla, non pharetra enim consequat. Nunc a quam metus. Vivamus ultrices ultrices tortor nec blandit. Etiam vitae ornare quam. Aliquam molestie ante vel tellus"</p>
+      </header>
+     
+      <footer>
+      <section>
+        <div class="ten">
+          <div>10 days ago</div>
+        </div>
+      </section>
+
+      <section class="together">
+          <div class="flag"><i class="fa-solid fa-flag"></i></div>
+          <div class="retweet"><i class="fa-solid fa-retweet"></i></div>
+          <div class="heart"><i class="fa-solid fa-heart"></i></div>
+      </section>
+
+      </footer>
+  </article>
+  
+
 </body>
 </html>

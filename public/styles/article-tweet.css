@@ -1,0 +1,44 @@
+article {
+  border-style: solid;
+  border-color: black;
+  width: 90%;
+  margin: 1.5em
+}
+
+.mainTweet:hover {
+  box-shadow: 10px 5px  #3e508ab7;
+}
+
+footer {
+  border-top-style: solid;
+  border-top-width: 2px;
+  color:  black;
+}
+
+.tweet-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-ref {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.together {
+  display: flex;
+  align-items: space-evenly;
+  color: #000b2ee0
+}
+
+.together .flag:hover,
+.together .retweet:hover,
+.together .heart:hover {
+  color: #ffa502;
+}
