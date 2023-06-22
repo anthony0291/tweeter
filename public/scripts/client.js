@@ -5,26 +5,11 @@
  */
 
 
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  }];
 
 
 
 $(document).ready(function() {
-
-// Test / driver code (temporary). Eventually will get this from the server.
-  
- const createTweetElement = (tweetData) => {
+  const createTweetElement = (tweetData) => {
     const { name, handle } = tweetData["user"];
     const { text } = tweetData["content"];
     // const avatar = tweetData['user']['avatars'];
@@ -52,7 +37,6 @@ $(document).ready(function() {
     return $tweet;
   };
 
-
   const addTweetToPage = (target, post) => {
     $(target).append(post);
   };
@@ -64,30 +48,24 @@ $(document).ready(function() {
     }
   };
 
-//call renderTweets(#tw,tD) which calls
-//createTweetElement()
-
-// const localDataPost2 = createTweetElement(tweetData[0]);
-
-  renderTweets("#tweets-container", tweetData);
-
-
   $('.new-tweet tweet').submit(function(event) {
     event.preventDefault();
-    if($.ajax({ 
+    if ($.ajax({
       method: "POST",
       url:"/tweets/",
       data: $this.serialize(),
     })) {
-      (goodPost) => $.ajax('/tweets/', { method: "GET" });
+      (goodPost) => {
+        $.ajax('/tweets/', { method: "GET" }).then((res) => {
+          renderTweets("#tweets-container", res);
+        });
+      };
     }
-    console.log($this.serialize());
   });
 
 
   const loadTweets = function() {
-    $.ajax('/tweets/', { method: "GET" })
-    .then((res) => {
+    $.ajax('/tweets/', { method: "GET" }).then((res) => {
       renderTweets("#tweets-container", res);
     });
   };
@@ -99,10 +77,54 @@ $(document).ready(function() {
 
 
 
-    // $.ajax({
-  //   method:"GET",
-  //   url: "http:localhost:8080/api/posts",
-  // });
+
+// const tweetData = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   }];
+
+
+
+// const tweetData = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   }];
+
+
+
+
+
+
+//call renderTweets(#tw,tD) which calls
+//createTweetElement()
+
+// const localDataPost2 = createTweetElement(tweetData[0]);
+
+// renderTweets("#tweets-container", tweetData);
+
+
+
+
+// $.ajax({
+//   method:"GET",
+//   url: "http:localhost:8080/api/posts",
+// });
 
 
 
@@ -115,10 +137,10 @@ $(document).ready(function() {
 //   });
 
 
-    // $('.new-tweet p').empty().slideUp();
-    // if ($.ajax({ url: "/tweets/", method: 'POST', data: $this.serialize() })) {
-    //      (successfulPost) => $.ajax('/tweets/', { method: 'GET'});
-    //  };
+// $('.new-tweet p').empty().slideUp();
+// if ($.ajax({ url: "/tweets/", method: 'POST', data: $this.serialize() })) {
+//      (successfulPost) => $.ajax('/tweets/', { method: 'GET'});
+//  };
 
 
 
@@ -207,14 +229,14 @@ $(document).ready(function() {
 //   $article.append($footer);
   
 // const addPostToPage = (target, post) => {
-  //   $(target).append(post);
-  // };
+//   $(target).append(post);
+// };
   
-  //   for (const tweets of tweetData) {
-    //     const newPost = 
-    //   }
-    //   const $tweet = $()
-    //   // timestamp: 1:05:12
-    // }
+//   for (const tweets of tweetData) {
+//     const newPost =
+//   }
+//   const $tweet = $()
+//   // timestamp: 1:05:12
+// }
     
-    //add all tweets to pag
+//add all tweets to pag
