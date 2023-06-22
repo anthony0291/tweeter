@@ -4,36 +4,37 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
-
-
-$(document).ready(function() {
   const createTweetElement = (tweetData) => {
     const { name, handle } = tweetData["user"];
     const { text } = tweetData["content"];
-    // const avatar = tweetData['user']['avatars'];
-
+    const avatar = tweetData['user']['avatars'];
+  
     const $tweet = $("<article>");
     const $title = $("<h3>");
     const $content = $("<p>");
     const $author = $("<p>");
 
-    // const $avatar = $(`<img src= ${avatar}>`);
-    // const $symbols = $('<div class="symbols"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></div>');
+    const $avatar = $(`<img src= ${avatar}>`);
+    const $symbols = $('<div class="symbols"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></div>');
+    const $timeAgo = $(`<div>${$.timeago(tweetData['created_at'])}</div>`);
+    
 
     $title.text(name);
     $content.text(text);
     $author.text(handle);
+    // $timeAgo.text($timeAgo);
     // $avatar.text($avatar);
     // $symbols.text($symbols);
 
     $tweet.append($title);
-    // $tweet.append($avatar);
+    $tweet.append($avatar);
     $tweet.append($author);
     $tweet.append($content);
-    // $tweet.append($symbols);
+    $tweet.append($timeAgo);
+    $tweet.append($symbols);
   
+    console.log($.timeago(tweetData['created_at']));
+    // console.log(tweetData['created_at']);
     return $tweet;
   };
 
@@ -47,6 +48,9 @@ $(document).ready(function() {
       addTweetToPage(target, newPost);
     }
   };
+
+
+$(document).ready(function() {
 
   $('.new-tweet tweet').submit(function(event) {
     event.preventDefault();
@@ -73,6 +77,8 @@ $(document).ready(function() {
   loadTweets();
 
 });
+
+
 
 
 
@@ -143,14 +149,6 @@ $(document).ready(function() {
 //  };
 
 
-
-
-
-
-
-
-
-
 // const createTweetElement = (tweetData) => {
 //   const $tweet = $article;
 //   const { name, avatars, handle } = tweetData["user"];
@@ -196,18 +194,11 @@ $(document).ready(function() {
 // //   console.log("click");
 // // });
 
-
-
-
 // //ready
 // });
 
 // });
 
-
-
-    
-    
 //  const created = tweetData["created_at"];
 //   // const $avatars = $("<p>");
 //   const $footer = $("span class='created'>" + created + "</span>");
