@@ -37,19 +37,67 @@ const createTweetElement = (tweetData) => {
 };
 
 const addTweetToPage = (target, post) => {
-  $(target).append(post);
+  $(target).prepend(post);
 };
+
 const renderTweets = (target, postList) => {
   for (const i of postList) {
     const newPost = createTweetElement(i);
     addTweetToPage(target, newPost);
   }
 };
+
 const loadTweets = function() {
   $.ajax('/tweets', { method: "GET" }).then((res) => {
     renderTweets("#tweets-container", res);
   });
 };
+
+const sendPostToBackend = (textarea) => {
+  console.log("top of sendPosttoBackEnd");
+  if (textarea === 'text=') {
+    alert('Error: You need to write before you can Tweet!');
+
+  } else if (textarea.length > 145) {
+    alert('Error: Tweet is too Tweety!');
+
+  } else {
+    $.ajax("/tweets", { method: "POST", data: textarea }).then((res) => {
+      renderTweets("#tweets-container", res);
+      console.log("tweetRendered");
+      setTimeout(function() {
+        loadTweets(textarea);
+      }, 5);
+    });
+  }
+};
+  
+
+//DOCUMENT READY
+$(document).ready(function() {
+  
+  loadTweets();
+
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+    sendPostToBackend($(this).serialize());
+  });
+  
+
+
+
+
+
+
+///////// END OF DOCUMENT
+});
+/////////
+
+
+
+
+
+
 
 
 
@@ -68,50 +116,3 @@ const loadTweets = function() {
 //   ];
 //   return newData;
 // };
-
-$(document).ready(function() {
-  loadTweets();
-
-  const sendPostToBackend = (textarea) => {
-    console.log("top of sendPosttoBackEnd");
-    $.ajax("/tweets", {
-      method: "POST",
-      data: textarea,
-      // data: $this.serialize(),
-    }).then((res) => {
-      // const newPost = createTweetElement(res);
-      console.log("afternewPost");
-      renderTweets("#tweets-container", res);
-      // const newPost = createTweetElement(myProfile(res.data));
-      // console.log(myProfile);
-      console.log("tweetrendered");
-    });
-  };
-
-  $("form").on("submit", function(event) {
-    event.preventDefault();
-    // console.log("hello", $(event.currentTarget).serialize());
-    // const text = $('textarea').val();
-    const text = $(this).serialize();
-    console.log(`Form submiss =  ${text}`);
-    sendPostToBackend(text);
-  });
-  
-
-
-
-
-// console.log( $( this ).serialize() );
-
-// $( "form" ).on( "submit", function( event ) {
-//   event.preventDefault();
-//   console.log( $( this ).serialize() );
-// });
-
-
-
-
-
-///end of .document
-});
-///
