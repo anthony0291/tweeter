@@ -71,12 +71,22 @@
         <h4>What are you humming about?</h4>
           
     
-        <form method="POST" action="/tweets/" class="form">
-          <textarea name="text" placeholder="start typing."></textarea>
-          <input type="submit" value="Tweet">
+        <form>
+        <textarea type="submit" name="text" placeholder="start typing!"></textarea>
+        <!-- <input type="text" name="body"> -->
+        <button>Send-it!</button>
+          
           <span class="counter">140</span>
         </form>
   
+        <!-- <form method="POST" action="/tweets/" class="form">
+          
+          <textarea name="textarea" placeholder="start! typing."></textarea>
+          <input type="text" name="body">
+          <button>Sendit!</button>
+          
+          <span class="counter">140</span>
+        </form> -->
       </section>
 
       <section id="tweets-container"></section>
