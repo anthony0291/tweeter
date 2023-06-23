@@ -56,10 +56,28 @@ const loadTweets = function() {
 const sendPostToBackend = (textarea) => {
   console.log("top of sendPosttoBackEnd");
   if (textarea === 'text=') {
-    alert('Error: You need to write before you can Tweet!');
+    $('.new-tweet p').text("You need to write before you can Tweet");
+    setTimeout(function() {
+      $('.new-tweet p').slideDown();
+      setTimeout(function() {
+        setTimeout(function() {
+          $('.new-tweet p').slideUp();
+        }, 2500);
+      }, 100);
+    });
 
   } else if (textarea.length > 145) {
-    alert('Error: Tweet is too Tweety!');
+    $('.new-tweet p').text("That's a little too Tweety. Try less Tweet.");
+    setTimeout(function() {
+      $('.new-tweet p').slideDown();
+      setTimeout(function() {
+        setTimeout(function() {
+          $('.new-tweet p').slideUp();
+        }, 2500);
+      }, 100);
+    });
+
+    // alert('Error: Tweet is too Tweety!');
 
   } else {
     $.ajax("/tweets", { method: "POST", data: textarea }).then((res) => {
@@ -71,7 +89,7 @@ const sendPostToBackend = (textarea) => {
     });
   }
 };
-  
+
 
 //DOCUMENT READY
 $(document).ready(function() {
@@ -92,8 +110,6 @@ $(document).ready(function() {
 ///////// END OF DOCUMENT
 });
 /////////
-
-
 
 
 
