@@ -15,32 +15,204 @@ html {
  */
 
 body {
-  color: #545149;
+  color:  #141312;;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ main.container {
+  background-color: #f4f1ec;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0em 1.5em;
+ }
+
  .tweetCounter {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
+  /* display:flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
   /* margin: 1em; */
  }
 
- .container {
-  display: flex-end;
+
+/* header */
+
+header {
+  height: 520px;
+  width: 100%;
+  background-color: orange;
+  background-image: url(../images/argyle.png);
+  display:flex;
+  align-items: flex-end;
   justify-content: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
   align-items: center;
- }
+  justify-content: flex-end;
+
+}
+
+header h1 {
+  /* font-size: 2rem; */
+  /* margin: 0; */
+  color: #f4f1ecee;
+}
+
+
+/* Nav */
+nav {
+  height: 100px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  position: fixed;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+nav button {
+  background: #4057a100;
+  border-style: none;
+}
+
+nav i {
+  background: #4057a100;
+  color: red;
+  border-style: none;
+  padding-bottom: 0.5rem;
+}
+
+nav span {
+  margin: 0em 1em 0em 0.25em;
+}
+
+nav .right {
+  display: flex;
+  flex-direction: column;
+}
+
+.left span.logo {
+  font-family: 'Bungee', sans-serif;
+  font-size: 2.5rem;
+}
 
 
 
+article {
+  border-style: solid;
+  border-width: 2px;
+  color:  #000000;
+  margin-top: 2em;
+  width: 90%;
 
+}
 
+article:hover {
+  box-shadow: 13px 7px  #3e508ab7;
+}
 
+article .top {
+  display: flex;
+  padding: 1em 1em 0em 1em;
 
+}
+/* avatar image */
+article .top img {
+  padding-right: 1.25em;
+  align-self: flex-end;
+}
+
+/* tweet title */
+article .top h3 {
+  color: #717ea6;
+  font-size: 2rem;
+}
+
+/* @email */
+article .top p { 
+  display:flex;
+  align-items: center;
+  padding: 0rem 6rem 0rem 2rem;
+  font-size: 1.5rem;
+  color: rgb(83, 83, 83);
+  margin-left: auto
+} 
+
+/* tweet content */
+article .mid p {
+  word-break: break-all;
+  margin: 0rem 7rem 2rem;
+}
+
+article .bot {
+  display: flex;
+  justify-content: space-between;
+  border-top-style: ridge;
+  padding: 0.5em 1em;
+}
+
+article .bot em {
+  color: rgb(83, 83, 83);
+}
+
+i  {
+  padding: 7px;
+  color: #4056A1;
+}
+
+i:hover {
+  color: #ffa502;
+}
+
+.new-tweet h4 {
+  margin: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+  color: rgb(83, 83, 83);
+}
+
+section.new-tweet{
+  width: 90%;
+}
+
+section.new-tweet form textarea {
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+form button {
+  padding: .25rem 0.5rem;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  font-family: 'Bungee', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+  font-size: 1.25rem;
+  padding-left: 0.5em;
+  color: #535353;
+}
+
+.counter.tweetIsTooLong {
+  color: red;
+}
+
+.new-tweet p {
+  font-size: 1.25rem;
+  color: red
+}

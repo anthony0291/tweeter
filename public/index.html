@@ -38,86 +38,38 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <header id="top-header">
-    
-    <nav>
-
+    <nav>   
       <div class="left">
         <span class="logo">tweeter</span>
-      </div>
-      
+      </div>  
+
       <div class="right">
         <span><b>Write</b> a new tweet</span>
         <button type="button">
-        <i class="fa-solid fa-angles-down fa-bounce"></i>
+          <i class="fa-solid fa-angles-down fa-bounce"></i>
         </button>
       </div>
-      
     </nav>
-    
-      <section class="bottom-header">
+
+    <header>
+      <div class ="center">
         <img src="/images/profile-hex.png">
-          <br>
-        <h2>Tony Tran</h2>
-      </section>
-    </header>
-
+        <!-- <br> -->
+        <h1>Tony Tran</h1>
+      </div>
+    </header>      
     <!-- Page-specific (main) content here -->
-
     <main class="container">     
-  
       <section class="new-tweet">
-
         <p></p>
-        <h4>What are you humming about?</h4>
-          
-    
+          <h4>What are you humming about?</h4>
         <form>
-        <textarea type="submit" name="text" placeholder="start typing!"></textarea>
-        <button>Send-it!</button>
-
-        <!-- <input type="text" name="body"> -->
-          
-          <span class="counter">140</span>
+          <textarea type="submit" name="text" placeholder="Start your tweets!"></textarea>
+            <button>TWEET</button>
+            <span class="counter">140</div>
         </form>
-  
-        <!-- <form method="POST" action="/tweets/" class="form">
-          
-          <textarea name="textarea" placeholder="start! typing."></textarea>
-          <input type="text" name="body">
-          <button>Sendit!</button>
-          
-          <span class="counter">140</span>
-        </form> -->
       </section>
-
-      <section id="tweets-container"></section>
-
+        <section id="tweets-container"></section>
     </main>
   </body>
 </html>
-
-
-
-<!-- <article class="mainTweet">
-      <header>
-      <div class="tweet-top">
-      <div>avatar</div>
-      <div>Rhoda Jacobs</div>
-      <div class="tweet-ref">@Mrs.Jacobs</div>
-      </div>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet, leo vitae congue ullamcorper, lacus lacus rhoncus magna, at cursus sapien ante vel tellus. Phasellus lobortis felis sit amet lacus fringilla, non pharetra enim consequat. Nunc a quam metus. Vivamus ultrices ultrices tortor nec blandit. Etiam vitae ornare quam. Aliquam molestie ante vel tellus"</p>
-      </header>
-      <footer>
-      <section>
-        <div class="ten">
-          <div>10 days ago</div>
-        </div>
-      </section>
-      <section class="together">
-          <div class="flag"><i class="fa-solid fa-flag"></i></div>
-          <div class="retweet"><i class="fa-solid fa-retweet"></i></div>
-          <div class="heart"><i class="fa-solid fa-heart"></i></div>
-      </section>
-      </footer>
-  </article> -->
