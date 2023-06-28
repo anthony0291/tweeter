@@ -1,0 +1,61 @@
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    width: 100%
+  }
+  main.container {
+    margin-top: 100px;
+  }
+  form {
+    margin-top: 100px;
+  }
+  header {
+    margin-top: 100px;
+    background-color: rgb(208, 242, 190);
+  }
+
+  nav {
+    position: fixed;
+  }
+
+   article .top h3 {
+     font-size: 1.5rem;
+   }
+  
+   article .top p { 
+     font-size: 1.2rem; 
+   } 
+
+   section.new-tweet form textarea {
+     font-size: 1.5rem;
+     height: 100px;
+   }
+   form {
+    margin-top: 1rem;
+   }
+}
+
+
+@media only screen and (max-device-width: 500px) {
+  body {
+     font-size: 36px;
+  }
+
+  header {
+   background-color: red;
+  }
+
+  article .top p { 
+    font-size: 2rem;
+  } 
+  section.new-tweet form textarea {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
