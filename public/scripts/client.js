@@ -43,6 +43,7 @@ const addTweetToPage = (target, post) => {
 };
 
 const renderTweets = (target, postList) => {
+  $(target).empty();
   for (const i of postList) {
     const newPost = createTweetElement(i);
     addTweetToPage(target, newPost);
